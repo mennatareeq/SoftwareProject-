@@ -1,0 +1,17 @@
+<p>
+  <strong>First name:</strong>
+  <%= @log.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @log.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @log.email %>
+</p>
+
+<%= link_to 'Edit', edit_log_path(@log) %> |
+<%= link_to 'Back', logs_path %>
