@@ -1,19 +1,24 @@
 Rails.application.routes.draw do
 
+  get '/slide/:id' => 'slider#show'
+
   resources :sessions, only:[:new,:create, :destroy]
-    
+
   get 'signup', to: 'logs#new', as: 'signup'
   get 'login', to: 'sessions#new',as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
-  
+
   resources :logs
 
   get 'page/index'
   root'page#index'
- 
 
-  
-  resources :pdfs, only: [:index, :new, :create, :destroy]
+
+
+  resources :pdfs, only: [:index, :show, :new, :create, :destroy]
+  get 'images/:id' => 'images#show', as: :image
+  post 'images/:id/comment' => 'images#comment', as: :comment_image
+
   #root "pdf#index"
 
   match ':controller(/:action(/:id))', :via => [:get, :post]

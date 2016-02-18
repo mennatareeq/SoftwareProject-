@@ -47,5 +47,6 @@ group :development do
   gem 'carrierwave','~>0.9'
   gem 'bootstrap-sass','~>2.3.2'
   gem 'grim'
+  gem 'acts_as_commentable'
 end
 

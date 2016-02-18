@@ -1,0 +1,8 @@
+<div class="">
+  <%= @pdf.name %>
+</div>
+
+
+<% @pdf.images.each do |image| %>
+  <a href="<%= image_path(image) %>"><%= image_tag(image.path, width: '300') %></a> 
+<% end %>

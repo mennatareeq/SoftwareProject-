@@ -1,0 +1,35 @@
+<%= image_tag(@image.path) %>
+ 
+  
+ 
+</form> 
+
+
+<div class="form">
+<%= form_tag(comment_image_path(@image), method: "post") do %>
+  <%= label_tag(:title, "Title:") %>
+  <%= text_field_tag(:title) %>
+  <%= label_tag(:comment, "Comment:") %>
+  <%= text_area_tag(:comment) %>
+  <%= submit_tag("Submit") %>
+ 
+  
+
+<% end %>
+<p> Comments</p>
+</div>
+
+<div class="comments">
+
+<% @image.comments.recent.all.each do |c| %>
+
+<!-- <p>Title</p> -->
+<h4> <%= c.title %> </h4>
+<!-- <p>Comment</p> -->
+<h> <%= c.comment %> </h>
+</br>
+<h>  </h>
+<hr>
+<% end %>
+</div>
+</br>

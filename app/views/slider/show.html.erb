@@ -1,0 +1,7 @@
+<h1>Slider#show</h1>
+
+<%= image_tag "#{@images_path}page1.png"%>
+<div>
+commentable = Post.find(1)
+comments = commentable.comments.recent.limit(10).all
+</div>
